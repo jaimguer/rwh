@@ -53,3 +53,5 @@ any_foldr p l = foldr f False l
                 where
                 f x acc = if p x then True else acc
 
+-- The type system makes multiple-argument functions hard and annoying to work
+-- with
