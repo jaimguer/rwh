@@ -36,7 +36,6 @@ asInt_fold s          = foldl f 0 s
                       where
                       f acc x  = (10 * acc) + (ord x - ord '0')
 
---concat_foldr :: [[Char]] -> [Char]
 concat_foldr l = foldr f [] l
                where
                f x acc = x ++ acc
@@ -48,7 +47,9 @@ takeWhile_recursion p (x : xs)
 
 takeWhile_foldr p l = foldr f [] l
                     where
-                    f x acc = if (p x) then x : acc else []
+                    f x acc = if p x then x : acc else []
 
-
+any_foldr p l = foldr f False l
+                where
+                f x acc = if p x then True else acc
 
